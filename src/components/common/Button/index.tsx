@@ -2,21 +2,24 @@ import { Button } from "@mui/material";
 import React from "react";
 type ButtonComponentProps = {
   variant: "text" | "contained" | "outlined";
-  type: "button"|"submit"|"reset"
+  type: "button" | "submit" | "reset";
+  text: string;
 };
 
 export const ButtonComponent: React.FC<ButtonComponentProps> = ({
   variant,
-  type
+  type,
+  text,
 }) => {
   return (
     <Button
       variant={variant}
       size="large"
-      sx={{ width: "50%", margin: "0 auto" }}
+      sx={{ margin: "0 auto" }}
       type={type}
+      fullWidth
     >
-      Button
+      {text}
     </Button>
   );
 };

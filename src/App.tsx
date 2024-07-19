@@ -5,6 +5,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Navbar from "./layouts/Navbar";
 import ProtectedRouter from "./utils/ProtectedRouter";
+import CreateBlog from "./pages/CreateBlog";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route element={<ProtectedRouter />}>
           <Route path="/" element={<Home />} />
+          <Route path="/create-blog" element={<CreateBlog />} />
         </Route>
 
         {/* <ProtectedRouter>

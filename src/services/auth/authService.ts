@@ -5,7 +5,7 @@ const register = () => {
 };
 
 const login = async(credentials: Login) => {
-    const response = await api.post("/Auth/login", credentials);
+    const response = await api.post("api/Auth/login", credentials);
     return response.data
 };
 
