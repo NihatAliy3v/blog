@@ -39,9 +39,11 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = (setting: string) => {
+  const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-    console.log(setting);
+  };
+  const handleSelectUserMenu = (setting: string) => {
+    setAnchorElUser(null);
     navigate(`/${setting}`);
   };
   // const theme = useTheme();
@@ -140,7 +142,17 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <Avatar
+                  sx={{
+                    bgcolor: "orange",
+                    color: "#fff",
+                    fontSize:"16px"
+                  }}
+                  aria-label="recipe"
+                >
+                  NA
+                </Avatar>
               </IconButton>
             </Tooltip>
             <Menu
@@ -162,7 +174,7 @@ function Navbar() {
               {settings.map((setting) => (
                 <MenuItem
                   key={setting.value}
-                  onClick={() => handleCloseUserMenu(setting.value)}
+                  onClick={() => handleSelectUserMenu(setting.value)}
                 >
                   <Typography textAlign="center">{setting.label}</Typography>
                 </MenuItem>

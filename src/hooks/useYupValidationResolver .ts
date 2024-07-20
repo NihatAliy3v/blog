@@ -1,15 +1,21 @@
-import  { useCallback } from "react";
-import {  FieldErrors, FieldValues, Resolver, ResolverResult } from "react-hook-form";
+import { useCallback } from "react";
+import {
+  FieldErrors,
+  FieldValues,
+  Resolver,
+  ResolverResult,
+} from "react-hook-form";
 import * as yup from "yup";
 
-const useYupValidationResolver = <T extends FieldValues>(validationSchema: yup.AnyObjectSchema): Resolver<T> =>
+const useYupValidationResolver = <T extends FieldValues>(
+  validationSchema: yup.AnyObjectSchema
+): Resolver<T> =>
   useCallback(
     async (data: T): Promise<ResolverResult<T>> => {
       try {
         const values = await validationSchema.validate(data, {
           abortEarly: false,
         });
-
         return {
           values,
           errors: {},

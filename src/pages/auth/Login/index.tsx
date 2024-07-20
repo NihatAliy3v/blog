@@ -60,7 +60,7 @@ const Login = () => {
             name="password"
             onChange={handleLoginChange}
           />
-          <ButtonComponent variant="contained" type="submit" />
+          <ButtonComponent variant="contained" type="submit" text="submit" />
         </Stack>
       </form>
     </Stack>
